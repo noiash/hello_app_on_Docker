@@ -23,11 +23,12 @@ RUN apk update && \
         curl-dev
 
 RUN apk add bash curl nodejs
-# RUN touch ~/.bashrc \
-#       && curl -o- -L https://yarnpkg.com/install.sh | bash \
-#       && ln -s "$HOME/.yarn/bin/yarn" /usr/local/bin/yarn
+RUN touch ~/.bashrc \
+      && curl -o- -L https://yarnpkg.com/install.sh | bash \
+      && ln -s "$HOME/.yarn/bin/yarn" /usr/local/bin/yarn
 
-RUN npm install --global yarn
+RUN node -v
+RUN yarn -v
 
 COPY Gemfile ${ROOT}
 COPY Gemfile.lock ${ROOT}
