@@ -27,9 +27,6 @@ RUN touch ~/.bashrc \
       && curl -o- -L https://yarnpkg.com/install.sh | bash \
       && ln -s "$HOME/.yarn/bin/yarn" /usr/local/bin/yarn
 
-RUN node -v
-RUN yarn -v
-
 COPY Gemfile ${ROOT}
 COPY Gemfile.lock ${ROOT}
 
